@@ -9,6 +9,8 @@ const links = [
   { href: "about", text: "About" },
 ];
 const users = ["Rose", "Cake", "Biff"];
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
 
 app.get("/", (req, res) => {
   res.render("index", { links: links, users: users });
