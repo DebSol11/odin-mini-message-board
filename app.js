@@ -9,6 +9,7 @@ const links = [
   { href: "about", text: "About" },
 ];
 const users = ["Rose", "Cake", "Biff"];
+const aboutContent = ["Rudolfius", "Annuus", "Abel"];
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
@@ -18,10 +19,6 @@ app.get("/", (req, res) => {
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-// app.get("/", (req, res) => {
-//   res.render("index", { message: "EJS rocks!" });
-// });
 
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
